@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Create Object URL Demo</title>
+</head>
+<body>
+      <input type="file" id="video_file" />
+      <button onClick="handle_submit()">Set Video</button>
+      <br />
+      <video width="700" height="700" src="#" controls></video>
+      <script>
+
+              function handle_submit() {
+                var input_file = document.getElementById("video_file");
+                var file_obj_url = URL.createObjectURL(input_file.files[0]);
+                document.querySelector("video").src = file_obj_url;
+                console.log(input_file.value);
+                console.log(file_obj_url);
+
+              }
+      </script>
+</body>
+</html>
